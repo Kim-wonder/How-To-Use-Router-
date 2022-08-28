@@ -2,7 +2,8 @@ import './App.css';
 import Home from './pages/Home';
 import Aboutpage from './pages/AboutPage';
 import { Routes, Route } from 'react-router-dom';
-import Product from './pages/Product';
+import Products from './pages/Product';
+import Detail from './pages/Detail';
 //Routes : Route 를 감싼다. 각 페이지를 스위치 하는 역할. 
 //          Router 5버전에서는 switch 라고 적음.
 //Route : Routes 안에서 path로 '/경로' 를 설정하고 
@@ -13,9 +14,10 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/about' element={<Aboutpage />}/>
-        <Route path='/allProducts' element={<Product />}/>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/about' element={<Aboutpage/>}/>
+        <Route path='/products' element={<Products/>}/>
+        <Route path='/products/:id' element={<Detail/>}/> {/*/:id = restfull routes design*/}
       </Routes>
     </div>
   );
